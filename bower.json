@@ -1,0 +1,17 @@
+{
+  "name": "proyecto-final3960",
+  "description": "Small description for proyecto-final3960 goes here",
+  "main": "",
+  "authors": [
+    "Alejandro <aleerdzmtz15@hotmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

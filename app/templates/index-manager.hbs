@@ -1,0 +1,41 @@
+{{!--outlet--}}
+<h4>Bienvenido, Manager</h4>
+
+<nav>
+    <div class="nav-wrapper">
+        <a class="brand-logo right">Logo</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li>
+                {{#link-to 'team'}}
+                    Equipo
+                {{/link-to}}
+            </li>
+            <li>
+                {{#link-to 'login'}}
+                   Encuentros
+                {{/link-to}}
+            </li>
+            <li>
+                {{#link-to 'signup'}}
+                    Publicaciones
+                {{/link-to}}
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="row">
+    <div class="col s1"> </div>
+    <div class="parallax-container col s10">
+        <div class="parallax">
+            <img src="https://media-exp2.licdn.com/mpr/mpr/AAEAAQAAAAAAAAaRAAAAJDg1NWJlNzgwLTc1MjgtNGU1MS05YmYwLWJlY2NiM2Q1OTg0Ng.jpg">
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+</script>
+        
