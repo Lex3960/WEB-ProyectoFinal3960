@@ -1,41 +1,42 @@
-{{!--outlet--}}
-<h4>Bienvenido, Admin</h4>
-
+<!--Menu-->
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Administrador</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a{{action 'cerrarSesion'}}>Cerrar Sesión</a></li>
+        </ul>
+    </div>
+</nav>
+        
 <nav>
     <div class="nav-wrapper">
         <a class="brand-logo right">Logo</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li>
-                {{#link-to 'equipos'}}
+                {{#link-to 'index-admin'}}
+                    Inicio
+                {{/link-to}}
+            </li>
+            <li>
+                {{#link-to 'index-admin.equipos'}}
                     Equipos
                 {{/link-to}}
             </li>
             <li>
-                {{#link-to 'sedes'}}
+                {{#link-to 'index-admin.sedes'}}
                    Sedes
                 {{/link-to}}
             </li>
             <li>
-                {{#link-to 'encuentros'}}
+                {{#link-to 'index-admin.encuentros'}}
                     Encuentros
                 {{/link-to}}
             </li>
         </ul>
     </div>
+     
 </nav>
 
-<div class="row">
-    <div class="col s1"> </div>
-    <div class="parallax-container col s10">
-        <div class="parallax">
-            <img src="https://img00.deviantart.net/00d2/i/2013/204/1/8/batman__minimalistic_wallpaper_by_mak002-d6efibn.jpg">
-        </div>
-    </div>
-</div>
+{{outlet}}
 
-<script>
-    $(document).ready(function(){
-      $('.parallax').parallax();
-    });
-</script>
-        
+<!--footer-->

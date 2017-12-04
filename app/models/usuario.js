@@ -5,5 +5,7 @@ export default DS.Model.extend({
     nombre: DS.attr('string'),
     apellido:  DS.attr('string'),
     email: DS.attr('string'),
-    rol: DS.attr('boolean'),
+    rol: DS.attr('string'),
+    manage: DS.hasMany('equipo'),
+    miembroDe: DS.belongsTo('equipo')
 });

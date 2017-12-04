@@ -1,41 +1,38 @@
-{{!--outlet--}}
-<h4>Bienvenido, Member</h4>
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Miembro</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a{{action 'cerrarSesion'}}>Cerrar Sesión</a></li>
+        </ul>
+    </div>
+</nav>
 
 <nav>
     <div class="nav-wrapper">
         <a class="brand-logo right">Logo</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li>
-                {{#link-to 'team'}}
+                {{#link-to 'index-member'}}
+                    Inicio
+                {{/link-to}}
+            </li>
+            <li>
+                {{#link-to 'index-member.equipo'}}
                     Equipo
                 {{/link-to}}
             </li>
             <li>
-                {{#link-to 'login'}}
+                {{#link-to 'index-member.encuentros'}}
                    Encuentros
                 {{/link-to}}
             </li>
             <li>
-                {{#link-to 'signup'}}
-                    Avisos
+                {{#link-to 'index-member.publicaciones'}}
+                    Publicaciones
                 {{/link-to}}
             </li>
         </ul>
     </div>
 </nav>
 
-<div class="row">
-    <div class="col s1"> </div>
-    <div class="parallax-container col s10">
-        <div class="parallax">
-            <img src="https://img00.deviantart.net/819d/i/2015/203/e/2/tsm_teamsolomid_e_sports_hd_wallpaper_simple_by_ferdifox-d92cw5t.png">
-        </div>
-    </div>
-</div>
-
-<script>
-    $(document).ready(function(){
-      $('.parallax').parallax();
-    });
-</script>
-        
+{{outlet}}

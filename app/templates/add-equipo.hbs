@@ -1,0 +1,104 @@
+{{outlet}}
+{{!--outlet--}}
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Registrar Equipo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a{{action 'cerrarSesion'}}>Cerrar Sesión</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="row">
+    <form class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+               <h5>Datos del Equipo</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                {{input id="f_name" type="text" class="validate" value=model.nombre}}
+                <label for="f_name">Nombre</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                {{textarea id="textarea1" class="materialize-textarea" value=model.descripcion}}
+                <label for="textarea1">Descripción</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                {{input id="lnk" type="text" class="validate" value=model.logo}}
+                <label for="lnk">URL de fotografía</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <button disabled={{savedTeam}} {{action 'saveEquipo' model}} class="btn waves-effect waves-light" type="submit" name="action">Guardar Equipo  
+                </button>
+            </div>
+        </div>
+
+        <hr>
+        
+        {{#each model.miembros as |miembro|}}
+            <div class="row">
+                <div class="input-field col s5">
+                    <button {{action 'addMember' model}} class="btn waves-effect waves-light" type="submit" name="action">Agregar Miembro 
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <h5>Datos del Miembro</h5>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    {{input type="text" class="validate" value=miembro.nombre}}
+                    <label>Nombre</label>
+                </div>
+                <div class="input-field col s6">
+                    {{input type="text" class="validate" value=miembro.apellido}}
+                    <label>Apellido</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    {{input type="email" class="validate" value=miembro.email}}
+                    <label >Correo electrónico</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s5">
+                    <button {{action 'saveMemberAll' model}} class="btn waves-effect waves-light" type="submit" name="action">Guardar Miembro 
+                    </button>
+                </div>
+            </div>
+        {{/each}}
+
+        <hr>
+
+        <div class="row">
+            <div class="input-field col s12">
+               <h5>Finalizar</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <button {{action 'registroEquipo'}} class="btn waves-effect waves-light" type="submit" name="action">Completar Registro
+                </button>
+            </div>
+        </div>
+     
+    </form>
+</div>
